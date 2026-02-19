@@ -83,6 +83,9 @@ def predict(img):
     prediction = np.argmax(prediction)+1
     prediction = classes[prediction]
     print(prediction)
+
+    predictionLabel.configure(text=prediction)
+    predictionLabel.text = prediction
     
 
 # UI ----------------------------------- v
@@ -92,6 +95,9 @@ label.pack()
 
 uploadButton = tk.Button(win, text='Upload image', command=uploadImg)
 uploadButton.pack()
+
+predictionLabel = tk.Label(win, text='prediction here')
+predictionLabel.pack()
 
 # lambda 
 
